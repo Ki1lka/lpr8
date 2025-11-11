@@ -1,0 +1,212 @@
+body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header {
+background: linear-gradient(90deg,rgba(48, 83, 99, 1) 0%, rgba(124, 115, 209, 1) 45%, rgba(84, 126, 156, 1) 71%, rgba(46, 67, 110, 1) 100%);
+  padding: 20px;
+  color: wheat;
+  border-radius: 10px;
+  position: relative;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  justify-content: row;
+  gap: 10px;
+}
+
+.logo img {
+  width: 30px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+}
+
+.menu a {
+  color: wheat;
+  font-size: 24px;
+  text-decoration: none;
+  margin: 20px;
+  transition: 0.6s;
+}
+
+.menu img {
+  width: 30px;
+  margin: 20px;
+  transition: 0.5s;
+}
+
+.menu img:hover {
+  width: 35px;
+  cursor: pointer;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+  color: black;
+  font-size: 28px;
+}
+
+
+header h1 {
+  font-size: 34px;
+}
+
+.board {
+  max-width: 1200px;
+  margin: 10px auto;
+  display: flex;
+  flex-direction: row;
+  padding: 50px;
+  gap: 50px;
+  transition: all 0.5s ease;
+  animation: board 1s ease-in;
+}
+
+.about {
+  background-color: rgb(219, 219, 219);
+  padding: 20px;
+  margin: 50px;
+  margin-top: 50px;
+  border-radius: 10px;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
+}
+
+.about h2 {
+  text-align: center;
+  margin: 10px;
+}
+
+.about p {
+  margin: 10px;
+  font-size: 18px;
+}
+
+.task {
+  background: rgb(227, 227, 227);
+  padding: 20px 50px;
+  border-radius: 10px;
+  margin: 20px;
+  transition: 0.3s;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
+  animation: opac 0.8s ease-in;
+}
+
+.task h4 {
+  text-align: center;
+}
+
+.task:hover {
+  background: #dcdde1;
+  transform: scale(1.1);
+  cursor: pointer;
+  box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.6);
+}
+
+
+@keyframes board {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  } to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+footer {
+  background: linear-gradient(90deg,rgba(101, 196, 240, 1) 0%, rgba(59, 49, 148, 1) 35%, rgba(37, 75, 102, 1) 71%, rgba(144, 180, 252, 1) 100%);
+  text-align: center;
+  padding: 15px;
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+footer a {
+  margin: 20px;
+  text-decoration: none;
+  font-size: 24px;
+  color: wheat;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 468px) {
+  .board {display: grid; grid-template-columns: repeat(1,1fr); }
+  .menu a {display: none;}
+  .task {padding: 10px; margin: 15px;}
+}
+
+@media (min-width: 768px) {
+  .board { display: grid; grid-template-columns: repeat(2,1fr);}
+  .burger {display: none;}
+}
+
+@media (min-width: 1200px) {
+  .board { grid-template-columns: repeat(3,1fr);}
+  .burger {display: none;}
+}
+
+.burger {
+  width: 30px;
+  cursor: pointer;
+}
+
+
+@keyframes opac {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  } to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+header .hel {
+  position: absolute;
+  height: 100px;
+  opacity: 0.9;
+  z-index: 100;
+  top: 25px;
+  right: 34px;
+  cursor: pointer;
+}
+
+.contact {
+  background-color: rgb(202, 202, 202);
+  border-radius: 10px;
+  padding: 30px;
+  margin: 40px;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.contact h1 {
+  text-align: center;
+}
+
+.contact li {
+  margin: 10px;
+}
+.contact a {
+  font-size: 24px;
+  color: black;
+  margin: 5px;
+  text-decoration: none;
+  transition: 0.7s;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 28px;
+  color: blue;
+}
