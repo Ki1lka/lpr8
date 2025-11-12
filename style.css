@@ -1,5 +1,6 @@
 body {
   font-family: Georgia, 'Times New Roman', Times, serif;
+  margin: 0;
 }
 
 header {
@@ -13,7 +14,6 @@ background: linear-gradient(90deg,rgba(48, 83, 99, 1) 0%, rgba(124, 115, 209, 1)
 
 .logo {
   display: flex;
-  justify-content: row;
   gap: 10px;
 }
 
@@ -60,11 +60,11 @@ header h1 {
   max-width: 1200px;
   margin: 10px auto;
   display: flex;
-  flex-direction: row;
   padding: 50px;
   gap: 50px;
   transition: all 0.5s ease;
   animation: board 1s ease-in;
+  margin: 50px auto;
 }
 
 .about {
@@ -90,10 +90,16 @@ header h1 {
   background: rgb(227, 227, 227);
   padding: 20px 50px;
   border-radius: 10px;
-  margin: 20px;
   transition: 0.3s;
   box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
   animation: opac 0.8s ease-in;
+}
+
+.task img {
+  width: 300px;
+  height: 200px;
+  border-radius: 5px;
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
 }
 
 .task h4 {
@@ -126,6 +132,10 @@ footer {
   color: white;
   border-radius: 10px;
   padding: 15px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 99%;
 }
 
 footer a {
@@ -140,9 +150,10 @@ footer a:hover {
 }
 
 @media (max-width: 468px) {
-  .board {display: grid; grid-template-columns: repeat(1,1fr); }
-  .menu a {display: none;}
-  .task {padding: 10px; margin: 15px;}
+  .board {display: grid; grid-template-columns: repeat(1,1fr); margin: 0 auto;}
+  .task {padding: 5px; margin: 0px;}
+  .hel {display: none; }
+  footer {position: relative;}
 }
 
 @media (min-width: 768px) {
@@ -187,6 +198,11 @@ header .hel {
   padding: 30px;
   margin: 40px;
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+  justify-content: center;
+}
+
+.contact ul {
+  justify-self: center;
 }
 
 .contact h1 {
