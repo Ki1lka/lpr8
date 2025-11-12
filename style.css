@@ -10,6 +10,8 @@ background: linear-gradient(90deg,rgba(48, 83, 99, 1) 0%, rgba(124, 115, 209, 1)
   border-radius: 10px;
   position: relative;
   justify-content: space-between;
+  width: 100%;
+   box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.4);
 }
 
 .logo {
@@ -74,6 +76,7 @@ header h1 {
   margin-top: 50px;
   border-radius: 10px;
   box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
+  animation: board 1s ease-in;
 }
 
 .about h2 {
@@ -90,7 +93,7 @@ header h1 {
   background: rgb(227, 227, 227);
   padding: 20px 50px;
   border-radius: 10px;
-  transition: 0.3s;
+  transition: 0.5s;
   box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
   animation: opac 0.8s ease-in;
 }
@@ -101,6 +104,7 @@ header h1 {
   border-radius: 5px;
     box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
 }
+
 
 .task h4 {
   text-align: center;
@@ -152,7 +156,6 @@ footer a:hover {
 @media (max-width: 468px) {
   .board {display: grid; grid-template-columns: repeat(1,1fr); margin: 0 auto;}
   .task {padding: 5px; margin: 0px;}
-  .hel {display: none; }
   footer {position: relative;}
 }
 
@@ -182,6 +185,16 @@ footer a:hover {
   }
 }
 
+@keyframes contact {
+  from {
+    opacity: 0;
+    transform: translateY(-80px);
+  } to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 header .hel {
   position: absolute;
   height: 100px;
@@ -196,9 +209,10 @@ header .hel {
   background-color: rgb(202, 202, 202);
   border-radius: 10px;
   padding: 30px;
-  margin: 40px;
+  margin: 80px;
   box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
   justify-content: center;
+  animation: contact 0.8s ease-in;
 }
 
 .contact ul {
