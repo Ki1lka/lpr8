@@ -1,16 +1,29 @@
+html {
+  height: 100%;
+}
+
 body {
   font-family: Georgia, 'Times New Roman', Times, serif;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
 }
 
 header {
 background: linear-gradient(90deg,rgba(48, 83, 99, 1) 0%, rgba(124, 115, 209, 1) 45%, rgba(84, 126, 156, 1) 71%, rgba(46, 67, 110, 1) 100%);
   padding: 20px;
   color: wheat;
-  border-radius: 10px;
   position: relative;
   justify-content: space-between;
-  width: 100%;
    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.4);
 }
 
@@ -59,14 +72,11 @@ header h1 {
 }
 
 .board {
-  max-width: 1200px;
-  margin: 10px auto;
-  display: flex;
-  padding: 50px;
-  gap: 50px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 15px;
   transition: all 0.5s ease;
   animation: board 1s ease-in;
-  margin: 50px auto;
 }
 
 .about {
@@ -91,11 +101,12 @@ header h1 {
 
 .task {
   background: rgb(227, 227, 227);
-  padding: 20px 50px;
+  padding: 10px;
   border-radius: 10px;
   transition: 0.5s;
   box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
   animation: opac 0.8s ease-in;
+  margin: 20px;
 }
 
 .task img {
@@ -103,6 +114,8 @@ header h1 {
   height: 200px;
   border-radius: 5px;
     box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-self: center;
 }
 
 
@@ -136,10 +149,9 @@ footer {
   color: white;
   border-radius: 10px;
   padding: 15px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 99%;
+  width: 100%;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 footer a {
@@ -154,9 +166,9 @@ footer a:hover {
 }
 
 @media (max-width: 468px) {
-  .board {display: grid; grid-template-columns: repeat(1,1fr); margin: 0 auto;}
-  .task {padding: 5px; margin: 0px;}
-  footer {position: relative;}
+  .board {display: grid; grid-template-columns: repeat(1,1fr);}
+  .task {padding: 5px; margin: 30px;}
+  .hel {display: none;}
 }
 
 @media (min-width: 768px) {
@@ -215,6 +227,7 @@ header .hel {
 }
 
 
+
 .contact ul {
   justify-self: center;
 }
@@ -240,4 +253,9 @@ header .hel {
   cursor: pointer;
   font-size: 28px;
   color: blue;
+}
+
+.tikva {
+  display: flex;
+  margin-left: 10px;
 }

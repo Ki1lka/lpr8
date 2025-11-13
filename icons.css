@@ -1,0 +1,165 @@
+body {
+	font-family: Arial, sans-serif;
+    text-align: center;
+	background-color: #f4f4f9;
+}
+
+.res {
+    cursor: pointer;
+    transition: 0.5s;
+    padding: 15px;
+    color: rgb(3, 3, 95);
+    font-size: 24px;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+.res:hover {
+    font-size: 42px;
+    color: rgb(253, 7, 7);
+}
+	
+.icons {
+	display: flex;
+    justify-content: center;
+	gap: 40px;
+}	
+
+.icon {	  
+    width: 100px;	  
+    transition: all 0.5s ease;	  
+    cursor: pointer;	
+}
+
+.icon:hover {	  
+    transform: scale(1.2);	  
+    filter: drop-shadow(0 0 8px #ff69b4);
+}
+
+.heart { background-color: #ffe6eb; border-radius: 50%; padding: 20px; }
+.gear { background-color: #e8f0ff; border-radius: 20%; padding: 20px; }
+.star { background-color: #fff9e6; border-radius: 50%; padding: 20px; }
+.tikva {padding: 20px;}
+.present {padding: 20px;}
+.tikva:hover {filter: drop-shadow(0 0 8px #ffffff); animation: tikva 0.5s ease-in forwards}
+.present:hover {filter: drop-shadow(0 0 8px #fff9f9); animation: present 1s ease-in infinite;}
+
+@keyframes present {
+    0% {fill:red;transform: scale(1.1);}
+    25% {fill:green;transform: scale(1.2);}
+    50% {fill:blue;transform: scale(1.1);}
+    75% {fill:yellow;transform: scale(1.2);}
+    100% {fill:purple;transform: scale(1.1);}
+} 
+
+@keyframes tikva {
+    0% {transform: translateX(20px) scale(1.2) rotate(-90deg); filter: drop-shadow(0 0 4px #e20000); }
+    50% {transform: translateX(-20px) scale(1.4) rotate(120deg); filter: drop-shadow(0 0 8px #e20000);}
+    100% {transform: scale(1.5) translateX(0) rotate(0deg); filter: drop-shadow(0 0 12px #e20000);}
+}
+
+
+.gear:hover {
+    animation: gear 0.9s forwards;
+}
+
+@keyframes gear {
+    from {
+        transform: rotate(0deg)scale(1);
+    } to {
+        transform: rotate(180deg)scale(1.1);
+    }
+    
+}
+
+@keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% {transform: scale(1);}
+}
+
+.heart:hover {
+    animation: pulse 0.8s infinite;
+}
+
+@keyframes glow {
+    0% {filter: drop-shadow(0 0 0px #ffd700);}
+    50% {filter: drop-shadow(0 0 10px #ffd700);}
+    100% {filter: drop-shadow(0 0 0px #ffd700);}
+}
+
+.star:hover {
+    animation: glow 1s infinite;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    } to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.icon {
+    animation: fadein 1s ease forwards;
+}
+
+.icon:nth-child(2) { animation-delay: 0.2s; }
+.icon:nth-child(3) { animation-delay: 0.3s; }
+.icon:nth-child(4) { animation-delay: 0.4s; }
+.icon:nth-child(5) { animation-delay: 0.5s; }
+
+
+
+/* NE RABOTAET */
+
+.draw {
+    stroke: #e91e63;
+    stroke-width: 2;
+	fill: none;
+	stroke-dasharray: 300;
+	stroke-dashoffset: 300;
+    animation: draw 3s ease forwards;
+}
+	
+@keyframes draw {
+	to { stroke-dashoffset: 0; }
+}
+
+
+@media (max-width: 900px)  {
+    .icons {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .icon {
+        width: 80px;
+    }
+}
+
+@media (max-width: 600px) {
+    .icons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .icon {
+        width: 70px;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
+
+@keyframes rotate360 {
+    from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+	
+.myicon:hover {
+	animation: rotate360 2s infinite linear;
+}
